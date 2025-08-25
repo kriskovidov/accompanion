@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Animal Company Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <img src="svgs/nut.svg" alt="Loading" class="preloader-icon">
+            <div class="preloader-text">Loading...</div>
+        </div>
+    </div>
+    <div id="main-content" style="display:none;">
+        <div class="main-layout">
+            <div class="logo"></div>
+            <div class="version-label">1.36.2.1618</div>
+            <div class="beta-label">Beta</div>
+            <div class="LYDDiv">
+                <div class="LYDHeader">LINK YOUR DEVICE</div>
+                <div class="LYDInstruction">1. Enter Animal Company on your headset.</div>
+                <div class="LYDInstruction">2. On the lobby computer, use the PROG key to switch to PAIR.EXE</div>
+                <div class="LYDInstruction">3. Follow the instructions and copy the pairing code on the screen</div>
+                <div class="LYDWarning">Do <b>not</b> share this code with anyone, including Wooster Games</div>
+                <div class="codeDiv">
+                    <input class="codeInputBlock" placeholder="-" type="text" maxlength="1" inputmode="text" autocomplete="off">
+                    <input class="codeInputBlock" placeholder="-" type="text" maxlength="1" inputmode="text" autocomplete="off">
+                    <input class="codeInputBlock" placeholder="-" type="text" maxlength="1" inputmode="text" autocomplete="off">
+                    <input class="codeInputBlock" placeholder="-" type="text" maxlength="1" inputmode="text" autocomplete="off">
+                    <input class="codeInputBlock" placeholder="-" type="text" maxlength="1" inputmode="text" autocomplete="off">
+                </div>
+                <div class="LYDComputer"><span></span></div>
+            </div>
+            <div class="buttonContinue inactive">CONTINUE<span></span></div>
+        </div>
+        <div class="cucumber-overlay" style="display:none;">
+            <img src="img/cucumber.png" class="cucumber-img" alt="Cucumber">
+        </div>
+        <div class="bg-horizontal-lines"></div>
+        <div class="bg-vertical-lines"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+@font-face {
+  font-family: 'KodeMono';
+  src: url('font/KodeMono-Bold.ttf') format('truetype'),
+       url('font/KodeMono-Medium.ttf') format('truetype'),
+       url('font/KodeMono-Regular.ttf') format('truetype'),
+       url('font/KodeMono-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #010A01;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+  gap: 30px;
+  padding-top: 50px;
+}
+
+.logo {
+  position: static;
+  margin-top: 0px;
+  margin-bottom: -30px;
+  width: 230px;
+  height: 110px;
+  background-image: url('svgs/ACLogo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 8px #00aa068c) drop-shadow(0 0 8px #00AA06);
+}
+
+.version-label {
+  width: 230px; /* такая же, как .logo */
+  text-align: right;
+  font-family: 'KodeMono', monospace;
+  font-size: 14px;
+  margin-bottom: -48px;
+  color: #ffffff;
+  user-select: none;
+  filter: drop-shadow(0 0 8px #00ff088c);
+}
+
+.beta-label {
+  width: 230px; /* такая же, как .logo */
+  text-align: left;
+  font-family: 'KodeMono', monospace;
+  font-size: 14px;
+  color: #ffee00;
+  user-select: none;
+  filter: drop-shadow(0 0 8px #00ff088c);
+}
+
+.LYDDiv {
+  position: static;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 400px;
+  padding: 23px 24px;
+  border: 4px solid #006D04;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 0 8px #00aa068c);
+}
+
+.LYDHeader {
+  font-family: 'KodeMono', bold;
+  font-size: 22px;
+  color: #00b806;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: 0 0 8px #00aa068c;
+  user-select: none;
+}
+
+.LYDInstruction {
+  font-family: 'KodeMono', medium;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 0 8px #00aa068c;
+  user-select: none;
+  max-width: 100%;
+}
+
+.LYDWarning {
+  font-family: 'KodeMono', medium;
+  font-size: 12px;
+  color: #ffee00;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  text-shadow: 0 0 8px #00aa068c;
+  user-select: none;
+  max-width: 100%;
+}
+
+.codeDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: px 0;
+  background: transparent;
+  min-width: unset;
+  max-width: unset;
+  min-height: unset;
+  box-shadow: none;
+}
+
+.codeInputBlock {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #006D04;
+  background: transparent;
+  caret-color: transparent;
+  color: #ffffff;
+  font-family: 'KodeMono', regular;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  box-sizing: border-box;
+  text-shadow: 0 0 8px #00aa068c;
+  transition: border-color 0.2s;
+}
+
+.codeInputBlock:focus {
+  border-color: #00c507;
+}
+
+.LYDComputer {
+  width: 200px;
+  height: 157px;
+  background-image: url('img/computer.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  outline: 3px solid #006D04;
+}
+
+.LYDComputer::before,
+.LYDComputer::after,
+.LYDComputer span::before,
+.LYDComputer span::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 5px solid #00ad00;
+  box-sizing: border-box;
+}
+
+/* левый верх */
+.LYDComputer::before {
+  top: -4px;   /* половина толщины */
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* правый верх */
+.LYDComputer::after {
+  top: -4px;
+  right: -4px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* левый низ */
+.LYDComputer span::before {
+  bottom: -4px;
+  left: -4px;
+  border-right: none;
+  border-top: none;
+}
+
+/* правый низ */
+.LYDComputer span::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
+}
+
+.buttonContinue {
+  font-family: 'KodeMono', bold;
+  font-size: 20px;
+  color: #00b806;
+  text-align: center;
+  padding: 15px 50px;
+  border: 3px solid #006D04;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  text-shadow: 0 0 8px #00aa068c;
+  filter: drop-shadow(0 0 8px #00aa068c);
+  transition: background-color 0.2s, color 0.2s;
+  /* убираем выделение при клике */
+  outline: none;
+}
+
+.buttonContinue::before,
+.buttonContinue::after,
+.buttonContinue span::before,
+.buttonContinue span::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 4px solid #009200;
+  box-sizing: border-box;
+}
+
+.buttonContinue:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.buttonContinue.inactive {
+  color: #3a5e3a;
+  border-color: #013801;
+  cursor: not-allowed;
+  filter: none;
+  pointer-events: none;
+  /* убираем тени и делаем темнее */
+}
+
+/* левый верх */
+.buttonContinue::before {
+  top: -4px;   /* половина толщины */
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* правый верх */
+.buttonContinue::after {
+  top: -4px;
+  right: -4px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* левый низ */
+.buttonContinue span::before {
+  bottom: -4px;
+  left: -4px;
+  border-right: none;
+  border-top: none;
+}
+
+/* правый низ */
+.buttonContinue span::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
+}
+
+.bg-horizontal-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 100px,
+    rgba(0, 31, 1, 0.5) 100px,
+    rgba(0, 31, 1, 0.5) 102px
+  );
+  animation: moveDown 80s linear infinite;
+  z-index: 1;
+}
+
+.bg-vertical-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 100px,
+    rgba(0, 31, 1, 0.5) 100px,
+    rgba(0, 31, 1, 0.5) 102px
+  );
+  animation: moveRight 80s linear infinite;
+  z-index: 2;
+}
+
+.bg-horizontal-lines::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 200%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 100px,
+    rgba(0, 61, 3, 0.5) 100px,
+    rgba(0, 61, 3, 0.5) 102px
+  );
+  filter: blur(2px);
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-vertical-lines::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%; height: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 100px,
+    rgba(0, 61, 3, 0.5) 100px,
+    rgba(0, 61, 3, 0.5) 102px
+  );
+  filter: blur(2px);
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.cucumber-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cucumber-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+#preloader {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.preloader-icon {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 0 8px #00aa068c);
+  animation: nut-spin 1.2s linear infinite;
+}
+
+@keyframes nut-spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.preloader-text {
+  font-family: 'KodeMono', monospace;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00aa068c;
+  user-select: none;
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
