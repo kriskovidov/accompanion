@@ -21,12 +21,12 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Центрируем по вертикали */
   min-height: 100vh;
   position: relative;
   z-index: 5;
   gap: 30px;
-  padding-top: 50px;
+  /* padding-top: 50px;  убрано для центрирования */
 }
 
 .logo {
@@ -39,10 +39,11 @@ html, body {
   background-size: contain;
   background-repeat: no-repeat;
   filter: drop-shadow(0 0 8px #00aa068c) drop-shadow(0 0 8px #00AA06);
+  align-self: center;
 }
 
 .version-label {
-  width: 230px; /* такая же, как .logo */
+  width: 230px;
   text-align: right;
   font-family: 'KodeMono', monospace;
   font-size: 14px;
@@ -50,16 +51,18 @@ html, body {
   color: #ffffff;
   user-select: none;
   filter: drop-shadow(0 0 8px #00ff088c);
+  align-self: center;
 }
 
 .beta-label {
-  width: 230px; /* такая же, как .logo */
+  width: 230px;
   text-align: left;
   font-family: 'KodeMono', monospace;
   font-size: 14px;
   color: #ffee00;
   user-select: none;
   filter: drop-shadow(0 0 8px #00ff088c);
+  align-self: center;
 }
 
 .LYDDiv {
@@ -213,6 +216,8 @@ html, body {
   transition: background-color 0.2s, color 0.2s;
   /* убираем выделение при клике */
   outline: none;
+  margin-top: 0;
+  align-self: center;
 }
 
 .buttonContinue::before,
